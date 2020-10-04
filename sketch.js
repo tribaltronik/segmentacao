@@ -88,10 +88,13 @@ function RegistaVisualizacao(familiaID){
     if (familiaID != undefined && familiaID > 0) {
     tracking.push(familiaID);
     }
-    var tipo = ObtemTipoCliente(tracking);
-    atualizaRecomendacoes(tipo);
-    localStorage.setItem('tipo',tipo );
-    console.log('tipo: ' + tipo);
+    if(tracking.length > 2)
+    {
+        var tipo = ObtemTipoCliente(tracking);
+        atualizaRecomendacoes(tipo);
+        localStorage.setItem('tipo',tipo );
+        console.log('tipo: ' + tipo);
+    }
     var jsonString = JSON.stringify(tracking);
     localStorage.setItem('tracking',jsonString );
 }
