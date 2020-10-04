@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Recomendacoes</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://the-allstars.com/vue2-animate/dist/vue2-animate.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    
+   
+
+</head>
+
+  <body>
+    <div id="app">
+        <div class="container">
+
+
+            <div class="row">
+                <h4>Produtos</h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(cardinfo, index) in cardinfos" :key="index">
+    
+                    <div class="card text-center">
+                        <!--<img class="card-img-top" :src="cardinfo.image" alt="" width="100%">-->
+                        <div class="card-block">
+                            <h4 class="card-title">{{ cardinfo.nome }}</h4>
+                            <p class="card-text">{{ cardinfo.preco }}</p>
+                            <a class="btn btn-primary" v-on:click="regista(cardinfo)" >Ver produto</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        
+        <a class="btn btn-warning" v-on:click="limpaTracking()" >Limpa registo de visualizações</a>
+
+        <div>
+            <div class="row">
+                <h4>Recomendacoes</h4>
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(cardinfo, index) in listaProdutosRecomendados" :key="index">
+    
+                    <div class="card text-center">
+                        <!--<img class="card-img-top" :src="cardinfo.image" alt="" width="100%">-->
+                        <div class="card-block">
+                            <h4 class="card-title">{{ cardinfo.nome }}</h4>
+                            <p class="card-text">{{ cardinfo.preco }}</p>
+                            <a class="btn btn-default" v-on:click="regista(cardinfo)" >Read More</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
