@@ -10,36 +10,43 @@ let catalogo =
         {
             nome: 'Bateria 1',
             preco: 123,
+            image: 'https://images.ludimusic.com/Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMLDWBPBA03150003.jpg',
             familia: 1
         },
         {
             nome: 'Bateria 2',
             preco: 200,
+            image:'https://images.ludimusic.com/Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMYABPBA03090025.jpg',
             familia: 1
         },
         {
             nome: 'Guitarra 1',
             preco: 200,
+            image: 'https://images.ludimusic.com//Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMTAYGBGC270003.jpg',
             familia: 2
         },
         {
             nome: 'Guitarra 2',
             preco: 200,
+            image: 'https://desenv.ludimusic.com/Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMADMGBGC270001.jpg',
             familia: 2
         },
         {
             nome: 'CDJ 1',
             preco: 200,
+            image: 'https://images.ludimusic.com/Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMPIODJLC30003.jpg',
             familia: 3
         },
         {
             nome: 'CDJ 2',
             preco: 200,
+            image: 'https://images.ludimusic.com/Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMPIODJCC010006.jpg',
             familia: 3
         },
         {
             nome: 'Acessorio 1',
             preco: 200,
+            image: 'https://images.ludimusic.com/Imagens/Imagens_Catalogo/Foto_Frontal_Pequena/Detalhes/217x207/ZMLUDACSPST0001.jpg',
             familia: 4
         }
     ]
