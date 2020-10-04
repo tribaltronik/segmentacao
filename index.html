@@ -22,14 +22,14 @@
                 <h4>Produtos</h4>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(cardinfo, index) in cardinfos" :key="index">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 mb-4" v-for="(cardinfo, index) in cardinfos" :key="index">
     
-                    <div class="card text-center">
+                    <div class="card text-center bg-dark">
                         <!--<img class="card-img-top" :src="cardinfo.image" alt="" width="100%">-->
                         <div class="card-block">
-                            <h4 class="card-title">{{ cardinfo.nome }}</h4>
-                            <p class="card-text">{{ cardinfo.preco }}</p>
-                            <a class="btn btn-primary" v-on:click="regista(cardinfo)" >Ver produto</a>
+                            <h4 class="card-title text-light">{{ cardinfo.nome }}</h4>
+                            <p class="card-text text-light">{{ cardinfo.preco }} €</p>
+                            <a class="btn btn-light" v-on:click="regista(cardinfo)" >Ver produto</a>
                         </div>
                     </div>
     
@@ -46,16 +46,22 @@
                 
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(cardinfo, index) in listaProdutosRecomendados" :key="index">
     
-                    <div class="card text-center">
+                    <div class="card text-center bg-warning">
                         <!--<img class="card-img-top" :src="cardinfo.image" alt="" width="100%">-->
                         <div class="card-block">
                             <h4 class="card-title">{{ cardinfo.nome }}</h4>
                             <p class="card-text">{{ cardinfo.preco }}</p>
-                            <a class="btn btn-default" v-on:click="regista(cardinfo)" >Read More</a>
+                            <a class="btn btn-dark text-light" v-on:click="regista(cardinfo)" >Read More</a>
                         </div>
                     </div>
     
                 </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <p>tipo cliente: {{tipoCliente}}</p>
             </div>
         </div>
     </div>

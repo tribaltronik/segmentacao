@@ -49,7 +49,8 @@ let catalogo =
         data: {
             cardinfos: catalogo,
             currentIdx: 0,
-            listaProdutosRecomendados: listaProdutosRecomendados
+            listaProdutosRecomendados: listaProdutosRecomendados,
+            tipoCliente: 0
         },
         methods: {
             regista: function (event) {
@@ -89,10 +90,10 @@ function RegistaVisualizacao(familiaID){
     tracking.push(familiaID);
     }
    
-        var tipo = ObtemTipoCliente(tracking);
-        atualizaRecomendacoes(tipo);
-        localStorage.setItem('tipo',tipo );
-        console.log('tipo: ' + tipo);
+    app.tipoCliente = ObtemTipoCliente(tracking);
+        atualizaRecomendacoes();
+        localStorage.setItem('tipo',app.tipoCliente  );
+        console.log('tipo: ' + app.tipoCliente );
     
     var jsonString = JSON.stringify(tracking);
     localStorage.setItem('tracking',jsonString );
@@ -113,10 +114,10 @@ function ObtemTipoCliente(listaFamilias){
 }
 
 
-function atualizaRecomendacoes(tipo){
+function atualizaRecomendacoes(){
     listaProdutosRecomendados = [];
-    if (tipo > 0) {
-        listaProdutosRecomendados = catalogo.filter(x => x.familia == tipo);
+    if (app.tipoCliente > 0) {
+        listaProdutosRecomendados = catalogo.filter(x => x.familia == app.tipoCliente );
     }
     app.listaProdutosRecomendados = shuffleArray(listaProdutosRecomendados);
 }
@@ -131,38 +132,5 @@ function shuffleArray(array) {
     return array;
 }
 
-function setup() {
-  noCanvas();
-  // initialize sentiment
-  //sentiment = ml5.sentiment('movieReviews', modelReady);
 
-  // setup the html environment
-  statusEl = createP('Loading Model...');
-  inputBox = createInput('Today is the happiest day and is full of rainbows!');
-  inputBox.attribute('size', '75');
-  submitBtn = createButton('submit');
-  sentimentResult = createP('sentiment score:');
 
-  for (let i = 0; i < catalogo.length; i++) {
-    console.log(catalogo[i].nome);
-  }
-
-  // predicting the sentiment on mousePressed()
-  submitBtn.mousePressed(getSentiment);
-}
-
-function getSentiment() {
-  // get the values from the input
-  const text = inputBox.value();
-
-  // make the prediction
-  const prediction = sentiment.predict(text);
-
-  // display sentiment result on html page
-  sentimentResult.html(`Sentiment score: ${prediction.score}`);
-}
-
-function modelReady() {
-  // model is ready
-  statusEl.html('model loaded');
-}
